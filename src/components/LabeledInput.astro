@@ -1,0 +1,15 @@
+---
+const { label, text } = Astro.props;
+---
+
+<label
+    class="flex flex-col text-xs font-mono font-black uppercase text-black/80"
+>
+    {label}
+    <input
+        class="w-fit px-2 text-lg font-bold text-[color:var(--text-card)] bg-blue-300/20 border border-black rounded"
+        type="text"
+        disabled
+        value={text}
+    />
+</label>
