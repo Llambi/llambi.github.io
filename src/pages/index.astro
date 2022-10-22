@@ -40,9 +40,23 @@ import Layout from "../layouts/Layout.astro";
             href="mailto:hugopf.mail@gmail.com"
             rel="noopener nofollow"
             aria-label="Contact"
-            class="px-2 py-1 rounded-2xl outline outline-3 bg-white/50 hover:text-white tracking-tighter font-semibold"
+            class="contact px-2 py-1 rounded-2xl outline outline-3 bg-white/50 hover:text-white tracking-tighter font-semibold"
         >
             Contact me!
         </a>
     </footer>
 </Layout>
+
+<script>
+    import party from "party-js";
+
+    document.querySelectorAll(".contact").forEach(($contactBtn) => {
+        $contactBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            party.confetti(this);
+            window.open(
+                "mailto:hugopf.mail@gmail.com?subject=[WORK] 👋HI! I'm <YOUR NAME>"
+            );
+        });
+    });
+</script>
